@@ -1,0 +1,15 @@
+import csv
+
+house1 = ["Lannister", "Greyjoy", "Selmy"]
+house_dec = 0
+
+with open('sigil.csv', 'w', newline='') as csv_houses:
+
+    fieldnames = ['number', 'Western House']
+    thewriter = csv.DictWriter(csv_houses, fieldnames=fieldnames)
+
+    thewriter.writeheader()
+
+    for house in house1:
+        house_dec += 1
+        thewriter.writerow({'number': house_dec, 'Western House': house1})
